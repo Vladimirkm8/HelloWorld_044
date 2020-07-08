@@ -15,20 +15,38 @@
 				<configuration artifactExtension="dxe" artifactName="${ProjName}" buildArtefactType="dsp1967.toolchain.llvm.buildArtefactType.dxe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=dsp1967.toolchain.llvm.buildArtefactType.dxe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="dsp1967.toolchain.llvm.config.dxe.debug.681389585" name="Debug" parent="dsp1967.toolchain.llvm.config.dxe.debug">
 					<folderInfo id="dsp1967.toolchain.llvm.config.dxe.debug.681389585." name="/" resourcePath="">
 						<toolChain id="dsp1967.toolchain.llvm.dxe.debug.1201288254" name="Milandr DSP1967 LLVM Cross C/C++" superClass="dsp1967.toolchain.llvm.dxe.debug">
+							<option id="dsp1967.toolchain.llvm.options.proc2.821822882" name="TsCompilerProcessor2" superClass="dsp1967.toolchain.llvm.options.proc2" value="cp2_1=--char-size-8;cp2_2=false" valueType="string"/>
 							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="dsp1967.toolchain.llvm.target.platform.1747725992" name="DSP1967 Target Platform" osList="all" superClass="dsp1967.toolchain.llvm.target.platform"/>
-							<builder buildPath="${workspace_loc:/${ProjName}}/Debug" id="dsp1967.toolchain.llvm.builder.1926645853" managedBuildOn="true" name="Milandr LLVM Cross C/C++ Builder.Debug" superClass="dsp1967.toolchain.llvm.builder"/>
+							<builder buildPath="${workspace_loc:/${ProjName}}/Debug" id="dsp1967.toolchain.llvm.builder.1926645853" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Milandr LLVM Cross C/C++ Builder" superClass="dsp1967.toolchain.llvm.builder"/>
 							<tool id="dsp1967.toolchain.llvm.assembler.base.1670861222" name="Assembler" superClass="dsp1967.toolchain.llvm.assembler.base">
-								<option defaultValue="ag1_1=true;ag1_2=true;ag1_3=false" id="dsp1967.toolchain.llvm.assembler.ocgeneral.gen1.1610498630" superClass="dsp1967.toolchain.llvm.assembler.ocgeneral.gen1" valueType="string"/>
+								<option defaultValue="ag1_1=true;ag1_2=true;ag1_3=false" id="dsp1967.toolchain.llvm.assembler.ocgeneral.gen1.1610498630" name="TsAssemblerGeneral1" superClass="dsp1967.toolchain.llvm.assembler.ocgeneral.gen1" valueType="string"/>
+								<inputType id="dsp1967.toolchain.llvm.assembler.input.1129899690" name="DSP1967 Assembler Sources" superClass="dsp1967.toolchain.llvm.assembler.input"/>
 							</tool>
 							<tool id="dsp1967.toolchain.llvm.clang.c.269858839" name="Clang C" superClass="dsp1967.toolchain.llvm.clang.c">
-								<option defaultValue="true" id="dsp1967.toolchain.llvm.clang.miscellaneous.debuginfo.1558737270" superClass="dsp1967.toolchain.llvm.clang.miscellaneous.debuginfo" valueType="boolean"/>
+								<option defaultValue="true" id="dsp1967.toolchain.llvm.clang.miscellaneous.debuginfo.1558737270" name="Generate debug info (-g)" superClass="dsp1967.toolchain.llvm.clang.miscellaneous.debuginfo" valueType="boolean"/>
+								<option id="dsp1967.toolchain.llvm.clang.c.includes.paths.314451369" name="Include paths (-I)" superClass="dsp1967.toolchain.llvm.clang.c.includes.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${eclipse_home}toolchain\Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:\${ProjName}\HAL\inc}&quot;"/>
+								</option>
+								<inputType id="dsp1967.toolchain.llvm.clang.c.input.394872513" name="Clang C Input" superClass="dsp1967.toolchain.llvm.clang.c.input"/>
 							</tool>
 							<tool id="dsp1967.toolchain.llvm.clang.cxx.566972506" name="Clang C++" superClass="dsp1967.toolchain.llvm.clang.cxx">
-								<option defaultValue="true" id="dsp1967.toolchain.llvm.clang.miscellaneous.debuginfo.368554886" superClass="dsp1967.toolchain.llvm.clang.miscellaneous.debuginfo" valueType="boolean"/>
-								<option defaultValue="-c -fmessage-length=0 -fno-use-cxa-atexit -fno-limit-debug-info" id="dsp1967.toolchain.llvm.clang.miscellaneous.other.1168911999" superClass="dsp1967.toolchain.llvm.clang.miscellaneous.other" valueType="string"/>
+								<option defaultValue="true" id="dsp1967.toolchain.llvm.clang.miscellaneous.debuginfo.368554886" name="Generate debug info (-g)" superClass="dsp1967.toolchain.llvm.clang.miscellaneous.debuginfo" valueType="boolean"/>
+								<option defaultValue="-c -fmessage-length=0 -fno-use-cxa-atexit -fno-limit-debug-info" id="dsp1967.toolchain.llvm.clang.miscellaneous.other.1168911999" name="Extra options" superClass="dsp1967.toolchain.llvm.clang.miscellaneous.other" valueType="string"/>
+								<option id="dsp1967.toolchain.llvm.clang.cxx.preproc.defined.1740620449" name="Defined symbols (-D)" superClass="dsp1967.toolchain.llvm.clang.cxx.preproc.defined" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__1967VN044__"/>
+									<listOptionValue builtIn="false" value="__CMLYNX__"/>
+									<listOptionValue builtIn="false" value="__ELF__"/>
+									<listOptionValue builtIn="false" value="_LIBCPP_HAS_NO_LONG_LONG"/>
+									<listOptionValue builtIn="false" value="_LIBCPP_HAS_NO_THREADS"/>
+								</option>
+								<inputType id="dsp1967.toolchain.llvm.clang.cxx.input.1762769522" name="Clang C++ Input" superClass="dsp1967.toolchain.llvm.clang.cxx.input"/>
 							</tool>
 							<tool id="dsp1967.toolchain.llvm.linker.dxe.1272065426" name="Linker" superClass="dsp1967.toolchain.llvm.linker.dxe">
-								<option defaultValue="lg2_1=true;lg2_2=true" id="dsp1967.toolchain.llvm.linker.ocgeneral.gen2.2141161985" superClass="dsp1967.toolchain.llvm.linker.ocgeneral.gen2" valueType="string"/>
+								<option defaultValue="lg2_1=true;lg2_2=true" id="dsp1967.toolchain.llvm.linker.ocgeneral.gen2.2141161985" name="TsLinkerGeneral2" superClass="dsp1967.toolchain.llvm.linker.ocgeneral.gen2" valueType="string"/>
+								<inputType id="dsp1967.toolchain.llvm.linker.input.368200635" name="DSP1967 Linker DOJ Input" superClass="dsp1967.toolchain.llvm.linker.input">
+									<additionalInput kind="additionaldependency" paths="$(USER_OBJS)"/>
+								</inputType>
 							</tool>
 							<tool id="dsp1967.toolchain.llvm.librarian.dlb.904953472" name="Librarian" superClass="dsp1967.toolchain.llvm.librarian.dlb"/>
 						</toolChain>
@@ -52,21 +70,37 @@
 					<folderInfo id="dsp1967.toolchain.llvm.config.dxe.release.1568169159." name="/" resourcePath="">
 						<toolChain id="dsp1967.toolchain.llvm.dxe.release.2104932321" name="Milandr DSP1967 LLVM Cross C/C++" superClass="dsp1967.toolchain.llvm.dxe.release">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="dsp1967.toolchain.llvm.target.platform.1131242136" name="DSP1967 Target Platform" osList="all" superClass="dsp1967.toolchain.llvm.target.platform"/>
-							<builder buildPath="${workspace_loc:/${ProjName}}/Release" id="dsp1967.toolchain.llvm.builder.342190253" managedBuildOn="true" name="Milandr LLVM Cross C/C++ Builder.Release" superClass="dsp1967.toolchain.llvm.builder"/>
-							<tool id="dsp1967.toolchain.llvm.assembler.base.1505519578" name="Assembler" superClass="dsp1967.toolchain.llvm.assembler.base"/>
+							<builder buildPath="${workspace_loc:/${ProjName}}/Release" id="dsp1967.toolchain.llvm.builder.342190253" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Milandr LLVM Cross C/C++ Builder" superClass="dsp1967.toolchain.llvm.builder"/>
+							<tool id="dsp1967.toolchain.llvm.assembler.base.1505519578" name="Assembler" superClass="dsp1967.toolchain.llvm.assembler.base">
+								<inputType id="dsp1967.toolchain.llvm.assembler.input.2136054747" name="DSP1967 Assembler Sources" superClass="dsp1967.toolchain.llvm.assembler.input"/>
+							</tool>
 							<tool id="dsp1967.toolchain.llvm.clang.c.1048005286" name="Clang C" superClass="dsp1967.toolchain.llvm.clang.c">
-								<option defaultValue="dsp1967.toolchain.llvm.clang.optimization.level.2" id="dsp1967.toolchain.llvm.clang.optimization.level.1586744702" superClass="dsp1967.toolchain.llvm.clang.optimization.level" valueType="enumerated"/>
+								<option defaultValue="dsp1967.toolchain.llvm.clang.optimization.level.2" id="dsp1967.toolchain.llvm.clang.optimization.level.1586744702" name="Optimization level" superClass="dsp1967.toolchain.llvm.clang.optimization.level" valueType="enumerated"/>
+								<inputType id="dsp1967.toolchain.llvm.clang.c.input.1620774823" name="Clang C Input" superClass="dsp1967.toolchain.llvm.clang.c.input"/>
 							</tool>
 							<tool id="dsp1967.toolchain.llvm.clang.cxx.1755901546" name="Clang C++" superClass="dsp1967.toolchain.llvm.clang.cxx">
-								<option defaultValue="dsp1967.toolchain.llvm.clang.optimization.level.2" id="dsp1967.toolchain.llvm.clang.optimization.level.280438408" superClass="dsp1967.toolchain.llvm.clang.optimization.level" valueType="enumerated"/>
-								<option defaultValue="-c -fmessage-length=0 -fno-use-cxa-atexit" id="dsp1967.toolchain.llvm.clang.miscellaneous.other.812700758" superClass="dsp1967.toolchain.llvm.clang.miscellaneous.other" valueType="string"/>
+								<option defaultValue="dsp1967.toolchain.llvm.clang.optimization.level.2" id="dsp1967.toolchain.llvm.clang.optimization.level.280438408" name="Optimization level" superClass="dsp1967.toolchain.llvm.clang.optimization.level" valueType="enumerated"/>
+								<option defaultValue="-c -fmessage-length=0 -fno-use-cxa-atexit" id="dsp1967.toolchain.llvm.clang.miscellaneous.other.812700758" name="Extra options" superClass="dsp1967.toolchain.llvm.clang.miscellaneous.other" valueType="string"/>
+								<option id="dsp1967.toolchain.llvm.clang.cxx.preproc.defined.697045076" name="Defined symbols (-D)" superClass="dsp1967.toolchain.llvm.clang.cxx.preproc.defined" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__1967VN044__"/>
+									<listOptionValue builtIn="false" value="__CMLYNX__"/>
+									<listOptionValue builtIn="false" value="__ELF__"/>
+									<listOptionValue builtIn="false" value="_LIBCPP_HAS_NO_LONG_LONG"/>
+									<listOptionValue builtIn="false" value="_LIBCPP_HAS_NO_THREADS"/>
+								</option>
+								<inputType id="dsp1967.toolchain.llvm.clang.cxx.input.398840591" name="Clang C++ Input" superClass="dsp1967.toolchain.llvm.clang.cxx.input"/>
 							</tool>
-							<tool id="dsp1967.toolchain.llvm.linker.dxe.1241730475" name="Linker" superClass="dsp1967.toolchain.llvm.linker.dxe"/>
+							<tool id="dsp1967.toolchain.llvm.linker.dxe.1241730475" name="Linker" superClass="dsp1967.toolchain.llvm.linker.dxe">
+								<inputType id="dsp1967.toolchain.llvm.linker.input.185651218" name="DSP1967 Linker DOJ Input" superClass="dsp1967.toolchain.llvm.linker.input">
+									<additionalInput kind="additionaldependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
 							<tool id="dsp1967.toolchain.llvm.librarian.dlb.323877682" name="Librarian" superClass="dsp1967.toolchain.llvm.librarian.dlb"/>
 						</toolChain>
 					</folderInfo>
 				</configuration>
 			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
