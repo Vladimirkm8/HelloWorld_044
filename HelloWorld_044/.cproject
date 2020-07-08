@@ -110,4 +110,6 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="ru.milandr.cmlynx.cproject" patchedToVersion="1.8.1"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>
